@@ -1,0 +1,6 @@
+<Solution>
+  <Folder Name="/Greeting Folder/">
+    <Project Path="../GreetingLibrary/GreetingLibrary.csproj" />
+    <Project Path="GreetingAPP/GreetingAPP.csproj" />
+  </Folder>
+</Solution>
