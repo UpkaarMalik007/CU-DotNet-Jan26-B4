@@ -3,6 +3,11 @@
     abstract class Vehicle
     {
         public string ModelName { get; set; }
+        
+        protected Vehicle(string model)
+        {
+            ModelName = model;
+        }
         public abstract void Move();
         
         public virtual string GetFuelStatus()
@@ -13,6 +18,10 @@
 
     class ElectricCar : Vehicle
     {
+        public ElectricCar(string name):base(name)
+        {
+            ModelName = name;
+        }
         public override void Move()
         {
             Console.WriteLine($"{ModelName} is gliding silently on battery power.");
@@ -26,6 +35,10 @@
 
     class HeavyTruck : Vehicle
     {
+        public HeavyTruck(string name):base(name)
+        {
+            ModelName = name;
+        }
         public override void Move()
         {
             Console.WriteLine($"{ModelName} is hauling cargo with high-torque diesel power.");
@@ -35,6 +48,10 @@
 
     class CargoPlane : Vehicle
     {
+        public CargoPlane(string name):base(name)
+        {
+            ModelName = name;
+        }
         public override void Move()
         {
             Console.WriteLine($"{ModelName} is ascending to 30,000 feet.");
@@ -50,9 +67,9 @@
         {
             Vehicle[] vehicle =
             {
-                new ElectricCar{ModelName="Tesla ModelX"},
-                new HeavyTruck{ModelName="Volvo HyperLoop"},
-                new CargoPlane{ModelName="Boeing 747"}
+                new ElectricCar("Tesla ModelX"),
+                new HeavyTruck("Volvo HyperLoop"),
+                new CargoPlane("Boeing 747")
             };
             foreach(Vehicle v1 in vehicle)
             {
