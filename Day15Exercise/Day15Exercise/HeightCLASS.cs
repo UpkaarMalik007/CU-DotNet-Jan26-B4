@@ -26,10 +26,10 @@ namespace Day15Exercise
             Inches = totalInches % 12;
         }
 
-        public Height AddHeight(Height h2)
+        public static Height operator + (Height h1,Height h2)
         {
-            int hFeet = this.Feet + h2.Feet;
-            double hInches = this.Inches + h2.Inches;
+            int hFeet = h1.Feet + h2.Feet;
+            double hInches = h1.Inches + h2.Inches;
 
             if (hInches >= 12)
             {
@@ -58,7 +58,8 @@ namespace Day15Exercise
             Height person1 = new Height(13.5);
             Height person2 = new Height(5, 6.5);
 
-            Height total = person1.AddHeight(person2);
+            Height total = person1 + person2;
+            //Height total = person1.AddHeight(person2);
 
             Console.WriteLine(person1);
             Console.WriteLine(person2);
