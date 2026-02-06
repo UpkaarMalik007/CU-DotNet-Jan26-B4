@@ -1,4 +1,5 @@
 ﻿using System.Security.Cryptography.X509Certificates;
+using System.Text;
 
 namespace Day27_02_PortfolioFile
 {
@@ -24,7 +25,7 @@ namespace Day27_02_PortfolioFile
             double rate = double.Parse(Console.ReadLine());
 
             bool fileExists = File.Exists(file);
-            using(StreamWriter sw=new StreamWriter(file, true))
+            using (StreamWriter sw = new StreamWriter(file, true))
             {
                 if (!fileExists)
                 {
@@ -34,7 +35,7 @@ namespace Day27_02_PortfolioFile
             }
 
             List<Loan> loans = new List<Loan>();
-
+            Console.OutputEncoding = Encoding.UTF8;
             using(StreamReader sr=new StreamReader(file))
             {
                 sr.ReadLine();
@@ -54,7 +55,7 @@ namespace Day27_02_PortfolioFile
 
             Console.WriteLine("Loan Portfolio");
 
-            Console.WriteLine($"ClientName{-10}  | Principal{-10}   | InterestRate{-10}  |  Risk Level{-10} ");
+            Console.WriteLine("ClientName  | Principal   | InterestRate |  Risk Level ");
 
             foreach(Loan loan in loans)
             {
@@ -64,7 +65,7 @@ namespace Day27_02_PortfolioFile
                 else if (loan.InterestRate >= 5 && loan.InterestRate <= 10) risk = "MEDIUM";
                 else risk = "LOW";
 
-                Console.WriteLine($"{loan.ClientName,-15}| {loan.Principal,-10}| {interestRate,-10}| {risk,-10}");
+                Console.WriteLine($"{loan.ClientName,-12}| {loan.Principal,-12:C2}| {interestRate,-13:C2}| {risk,-10}");
             }
             
 
