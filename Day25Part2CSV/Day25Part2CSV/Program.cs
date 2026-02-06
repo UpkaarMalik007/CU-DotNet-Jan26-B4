@@ -1,9 +1,12 @@
-﻿namespace Day25Part2CSV
-{
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
 
+namespace Day25Part2CSV
+{
     class Player
     {
-        public String Name { get; set; }
+        public string Name { get; set; }
         public int RunsScored { get; set; }
         public int BallsFaced { get; set; }
         public bool IsOut { get; set; }
@@ -16,66 +19,71 @@
             RunsScored = run;
             BallsFaced = b;
             IsOut = o;
-            StrikeRate = (double)RunsScored * 100 / BallsFaced;
-            if (IsOut) Average = RunsScored;
-            else Average = RunsScored;
-        }
 
+            // Strike Rate (no ternary)
+            if (BallsFaced == 0)
+                StrikeRate = 0;
+            else
+                StrikeRate = (double)RunsScored * 100 / BallsFaced;
+
+            // Average (single innings)
+            Average = RunsScored;
+        }
     }
+
     internal class Program
     {
-
         static void Main(string[] args)
         {
             try
             {
-                string[] strings =
-              {
-                "Steve Smith,84,90,True",
-                "Virat Kohli,29,35,false",
-                "Joe Root,110,120,True"
+                string[] data =
+                {
+                    "Steve Smith,84,90,True",
+                    "Virat Kohli,29,35,false",
+                    "Joe Root,110,120,True"
                 };
 
                 string fileName = @"..\..\..\players.csv";
-                File.WriteAllLines(fileName, strings);
 
+                File.WriteAllLines(fileName, data);
 
-                string[] strings1 = new string[3];
-                strings1 = File.ReadAllLines(fileName);
-                string[] splitString1 = strings1[0].Split(',');
-                string[] splitString2 = strings1[1].Split(',');
-                string[] splitString3 = strings1[2].Split(',');
+                string[] lines = File.ReadAllLines(fileName);
 
-                List<Player> o = new List<Player>
+                List<Player> players = new List<Player>();
+
+                // Dynamic CSV parsing
+                foreach (string line in lines)
                 {
-                    new Player(splitString1[0],int.Parse(splitString1[1]),int.Parse(splitString1[2]),bool.Parse(splitString1[3])),
-                    new Player(splitString2[0],int.Parse(splitString2[1]),int.Parse(splitString2[2]),bool.Parse(splitString2[3])),
-                    new Player(splitString3[0],int.Parse(splitString3[1]),int.Parse(splitString3[2]),bool.Parse(splitString3[3]))
-                };
-                for (int i = 0; i < 3; i++)
-                {
-                    if (o[i].BallsFaced < 10) o.Remove(o[i]);
-                }
-                o.Sort((a, b) => b.StrikeRate.CompareTo(a.StrikeRate));
-                Console.WriteLine("Name          Runs         SR        Avg");
-                Console.WriteLine("-----------------------------------------");
-                foreach (Player p in o)
-                {
-                    Console.WriteLine($"{p.Name,-15}{p.RunsScored,-5}{p.StrikeRate,10:f2}{p.Average,10:f2}");
+                    string[] s = line.Split(',');
+
+                    Player p = new Player(
+                        s[0],
+                        int.Parse(s[1]),
+                        int.Parse(s[2]),
+                        bool.Parse(s[3])
+                    );
+
+                    players.Add(p);
                 }
 
-            }
-            catch (FileNotFoundException f)
-            {
-                Console.WriteLine(f.Message);
-            }
-            catch (FormatException fo)
-            {
-                Console.WriteLine(fo.Message);
-            }
-            catch (DivideByZeroException d)
-            {
-                Console.WriteLine(d.Message);
+                for (int i = players.Count - 1; i >= 0; i--)
+                {
+                    if (players[i].BallsFaced < 10)
+                    {
+                        players.RemoveAt(i);
+                    }
+                }
+
+                var v = players.OrderByDescending(x => x.StrikeRate).ToList();
+
+                Console.WriteLine("Name            Runs      SR      Avg");
+                
+
+                foreach (Player p in players)
+                {
+                    Console.WriteLine($"{p.Name,-15}{p.RunsScored,-8}{p.StrikeRate,8:F2}{p.Average,8:F2}");
+                }
             }
             catch (Exception e)
             {

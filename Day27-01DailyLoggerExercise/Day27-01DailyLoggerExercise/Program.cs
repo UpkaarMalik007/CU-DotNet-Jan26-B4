@@ -22,6 +22,8 @@ namespace Day27_01DailyLoggerExercise
 
             Console.WriteLine("Your reflection have been saved");
 
+            
+
 
         }
     }
