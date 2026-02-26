@@ -1,11 +1,11 @@
-namespace Week4Assessment
+﻿namespace Week_4_Assessment
 {
     class Patient
     {
         List<Patient> patients = new List<Patient>();
         public string Name { get; set; }
         public decimal BaseFee { get; set; }
-        
+
         public virtual decimal CalculateBill()
         {
             return BaseFee;
@@ -13,7 +13,7 @@ namespace Week4Assessment
 
         public void AddPatient(Patient patient)
         {
-            patients.Add(patient); 
+            patients.Add(patient);
         }
 
         public decimal CalculateTotalReveneue()
@@ -36,7 +36,7 @@ namespace Week4Assessment
                     count++;
                 }
             }
-            return count; 
+            return count;
         }
 
         public override string ToString()
@@ -86,7 +86,7 @@ namespace Week4Assessment
         public override decimal CalculateBill()
         {
             decimal total = 0;
-            if (SeverityLevel<=5 && SeverityLevel>=1)
+            if (SeverityLevel <= 5 && SeverityLevel >= 1)
             {
                 total += BaseFee * SeverityLevel;
             }
@@ -139,18 +139,18 @@ namespace Week4Assessment
                     SeverityLevel = 4
                 });
             }
-            foreach(Patient pat in p)
+            foreach (Patient pat in p)
             {
                 Console.WriteLine(pat);
             }
-            
-            Patient p1 = new Patient();  object.
+
+            Patient p1 = new Patient(); 
             foreach (Patient pat in p)
             {
-                p1.AddPatient(pat); 
+                p1.AddPatient(pat);
             }
-            Console.WriteLine("The total Revenue is : "+p1.CalculateTotalReveneue());
-            Console.WriteLine("Inpatient count is : "+p1.GetInpatientCount());
+            Console.WriteLine("The total Revenue is : " + p1.CalculateTotalReveneue());
+            Console.WriteLine("Inpatient count is : " + p1.GetInpatientCount());
         }
     }
 }
