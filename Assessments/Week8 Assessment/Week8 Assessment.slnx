@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="EmployeeBonusSystem/EmployeeBonusSystem.csproj" />
+  <Project Path="EmployeeBonusSystemTests/EmployeeBonusSystemTests.csproj" />
+</Solution>
