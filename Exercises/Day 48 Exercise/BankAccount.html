@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Bank Account Holder Details</h1>
+  <form > 
+    <table >
+
+      <tr>
+          <td><label for="firstName">First Name:</label></td>
+          <td><input type="text" id="firstName" name="firstName" required></td>
+      </tr>
+      <tr>
+          <td><label for="lastName">Last Name:</label></td>
+          <td><input type="text" id="lastName" name="lastName" required></td>
+      </tr>
+      <tr>
+          <td><label>Gender:</label></td>
+          <td>
+              <input type="radio" id="male" name="gender" value="Male" required>
+              <label for="male">Male</label>
+
+              <input type="radio" id="female" name="gender" value="Female">
+              <label for="female">Female</label>
+          </td>
+      </tr>
+      <tr>
+          <td><label for="fatherName">Father's Name:</label></td>
+          <td><input type="text" id="fatherName" name="fatherName" required></td>
+      </tr>
+      <tr>
+          <td><label for="dob">Date of Birth:</label></td>
+          <td><input type="date" id="dob" name="dob" required></td>
+      </tr>
+      <tr>
+          <td><label for="mobileNumber">Mobile Number:</label></td>
+          <td><input type="tel" id="mobileNumber" name="mobileNumber" pattern="[0-9]{10}" required></td>
+      </tr>
+      <tr>
+          <td><label for="address">Address:</label></td>
+          <td><textarea id="address" name="address" rows="3" required></textarea></td>
+      </tr>
+      <tr>
+          <td><label for="pan">PAN Number:</label></td>
+          <td>
+              <input type="text" id="pan" name="pan"
+              pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}" required>
+          </td>
+      </tr>
+
+      <tr>
+          <td><label for="aadhaar">Aadhaar Number:</label></td>
+          <td>
+              <input type="text" id="aadhaar" name="aadhaar"
+              pattern="[0-9]{12}" required>
+          </td>
+      </tr>
+      
+      <tr>
+          <td><label for="accountType">Account Type:</label></td>
+          <td>
+              <select id="accountType" name="accountType" required>
+                  <option value="">Select</option>
+                  <option>Savings</option>
+                  <option>Current</option>
+                  <option>Fixed Deposit</option>
+              </select>
+          </td>
+      </tr>
+      <tr>
+          <td>
+              <input type="submit" value="Create Account">
+              
+          </td>
+          <td><input type="reset" name="" id=""></td>
+      </tr>
+    </table>
+
+  </form>
+</body>
+</html>
