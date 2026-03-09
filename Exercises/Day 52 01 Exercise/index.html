@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Registration Form</title>
+
+    <script>
+      function showData() {
+        let name = document.getElementById("ename").value;
+
+        let gender = "";
+        if (document.getElementById("male").checked) gender = "Male";
+        else gender = "Female";
+
+        let dob = document.getElementById("dob").value;
+        let age = document.getElementById("age").value;
+        let email = document.getElementById("email").value;
+
+        let skills = document.getElementsByName("skills");
+        let skillList = "";
+
+        for (let i = 0; i < skills.length; i++) {
+          if (skills[i].checked) {
+            skillList += skills[i].value + " ";
+          }
+        }
+
+        let city = document.getElementById("city").value;
+
+        let result =
+          "Name: " +
+          name +
+          "\nGender: " +
+          gender +
+          "\nDOB: " +
+          dob +
+          "\nAge: " +
+          age +
+          "\nEmail: " +
+          email +
+          s;
+        "\nSkills: " + skillList + "\nCity: " + city;
+
+        console.log(result);
+        return false;
+      }
+    </script>
+  </head>
+
+  <body>
+    <h1>Employee Registration Form</h1>
+
+    <form>
+      <table>
+        <tr>
+          <td><label>Enter Your Name:</label></td>
+          <td>
+            <input
+              type="text"
+              pattern="^[A-Z][a-z]+( [A-Z][a-z]+)*$"
+              name="ename"
+              id="ename"
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <td><label>Select Gender:</label></td>
+          <td>
+            <input type="radio" name="gender" id="male" />
+            <label for="male">Male</label>
+
+            <input type="radio" name="gender" id="female" />
+            <label for="female">Female</label>
+          </td>
+        </tr>
+
+        <tr>
+          <td><label>Select DOB:</label></td>
+          <td>
+            <input type="date" name="dob" id="dob" />
+          </td>
+        </tr>
+
+        <tr>
+          <td><label>Enter Age:</label></td>
+          <td>
+            <input type="number" name="age" id="age" min="10" max="60" />
+          </td>
+        </tr>
+
+        <tr>
+          <td><label>Enter Email:</label></td>
+          <td>
+            <input type="email" id="email" />
+          </td>
+        </tr>
+
+        <tr>
+          <td><label>Skills:</label></td>
+          <td>
+            <input type="checkbox" name="skills" value="C#" /> C#
+            <input type="checkbox" name="skills" value="Java" /> Java
+            <input type="checkbox" name="skills" value="Azure" /> Azure
+            <input type="checkbox" name="skills" value="Python" /> Python
+          </td>
+        </tr>
+
+        <tr>
+          <td><label>Select City:</label></td>
+          <td>
+            <select name="city" id="city">
+              <option value="" selected>Select</option>
+              <option value="Delhi">Delhi</option>
+              <option value="Mumbai">Mumbai</option>
+              <option value="Kolkata">Kolkata</option>
+              <option value="Chennai">Chennai</option>
+              <option value="CHD">CHD</option>
+            </select>
+          </td>
+        </tr>
+
+        <tr>
+          <td></td>
+          <td>
+            <input type="submit" value="Submit" onclick="return showData();" />
+            <input type="reset" />
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
