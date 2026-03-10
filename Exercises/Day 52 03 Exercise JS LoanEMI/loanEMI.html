@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script>
+      function show() {
+        let p = parseFloat(prompt("Enter the principal amount: "));
+        let r =
+          parseFloat(prompt("Enter the monthy intereset rate: ")) / 12 / 100;
+        let n = parseInt(prompt("Enter the number of months: "));
+        let emi = (p * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+
+        let balance = p;
+        let tbody = document.getElementById("scheduleBody");
+
+        for (let i = 1; i <= n; i++) {
+          let intereset = balance * r;
+          let principal = emi - intereset;
+          let remaining = balance - principal;
+
+          let row = `
+            <tr>
+              <td>${i}</td>
+              <td>${balance.toFixed(2)}</td>
+              <td>${emi.toFixed(2)}</td>
+              <td>${principal.toFixed(2)}</td>
+              <td>${intereset.toFixed(2)}</td>
+              <td>${remaining.toFixed(2)}</td>
+            </tr>`;
+
+          tbody.innerHTML += row;
+          balance = remaining;
+        }
+      }
+    </script>
+  </head>
+  <body onload="show()" class="p-3">
+    <table class="table table-striped table-hover border">
+      <thead class="table-light border">
+        <tr class="border">
+          <th class="border-end">SNO</th>
+          <th class="border-end">Loan Left</th>
+          <th class="border-end">EMI</th>
+          <th class="border-end">Principal</th>
+          <th class="border-end">Interest</th>
+          <th class="border-end">Remaining Balance</th>
+        </tr>
+      </thead>
+      <tbody id="scheduleBody"></tbody>
+    </table>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

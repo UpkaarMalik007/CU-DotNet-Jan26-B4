@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #bulbImage {
+        width: 300px;
+        margin-left: 0;
+      }
+    </style>
+    <script>
+      function work() {
+        let image = document.getElementById("bulbImage");
+        let left = document.getElementById("btnLeft");
+        let right = document.getElementById("btnRight");
+
+        right.onclick = function () {
+          image.style.marginLeft = "0px";
+        };
+        left.onclick = function () {
+          image.style.marginLeft = "-140px";
+        };
+      }
+    </script>
+  </head>
+  <body onload="work()">
+    <table>
+      <tr>
+        <td><input type="button" value="Turn on Light" id="btnLeft" /></td>
+        <td>
+          <div style="width: 159px; overflow: hidden">
+            <img src="/BulbImage.jpeg" id="bulbImage" />
+          </div>
+        </td>
+        <td><input type="button" value="Turn off Light" id="btnRight" /></td>
+      </tr>
+    </table>
+  </body>
+</html>
