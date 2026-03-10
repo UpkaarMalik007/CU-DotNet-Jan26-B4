@@ -27,7 +27,7 @@
           let remaining = balance - principal;
 
           let row = `
-            <tr>
+            <tr class="text-end">
               <td>${i}</td>
               <td>${balance.toFixed(2)}</td>
               <td>${emi.toFixed(2)}</td>
@@ -45,13 +45,13 @@
   <body onload="show()" class="p-3">
     <table class="table table-striped table-hover border">
       <thead class="table-light border">
-        <tr class="border">
-          <th class="border-end">SNO</th>
-          <th class="border-end">Loan Left</th>
-          <th class="border-end">EMI</th>
-          <th class="border-end">Principal</th>
-          <th class="border-end">Interest</th>
-          <th class="border-end">Remaining Balance</th>
+        <tr class="text-end">
+          <th>SNO</th>
+          <th>Loan Left</th>
+          <th>EMI</th>
+          <th>Principal</th>
+          <th>Interest</th>
+          <th>Remaining Balance</th>
         </tr>
       </thead>
       <tbody id="scheduleBody"></tbody>
