@@ -1,0 +1,66 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="jumbotron bg-light p-5 rounded text-center">
+    <h1>Welcome to Company Portal</h1>
+    <p>Professional IT Services and Products</p>
+
+    <a class="btn btn-primary btn-lg" onclick="showToast()">Learn More</a>
+</div>
+
+<div class="row mt-4">
+
+    <div class="col-md-4">
+        <div class="card">
+            <img  src="~/Images/consult.jpg" class="card-img-top" height="200"/>
+            <div class="card-body text-center">
+                <h5 class="card-title">Consulting</h5>
+                <p>Expert IT consulting services.</p>
+                <a class="btn btn-primary" asp-controller="Services" asp-action="Consulting"">Learn More</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card">
+            <img src="~/Images/training.jpeg" class="card-img-top" height="200" />
+            <div class="card-body text-center">
+                <h5 class="card-title">Training</h5>
+                <p>Professional technical training.</p>
+                <a class="btn btn-primary" asp-controller="Services" asp-action="Training"  >Learn More</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card">
+            <img src="~/Images/Products.jpeg" class="card-img-top" height="200" />
+            <div class="card-body text-center">
+                <h5 class="card-title">Products</h5>
+                <p>Professional technical.</p>
+                <a class="btn btn-primary" asp-controller="Products" asp-action="Software"  >Learn More</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index:11">
+    <div id="liveToast" class="toast" role="alert">
+        <div class="toast-header">
+            <strong class="me-auto">Company Portal</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+        </div>
+        <div class="toast-body">
+            Hi, Welcome to Company Portal
+        </div>
+    </div>
+</div>
+
+<script>
+    function showToast() {
+        var toastElement = document.getElementById('liveToast');
+        var toast = new bootstrap.Toast(toastElement);
+        toast.show();
+    }
+</script>

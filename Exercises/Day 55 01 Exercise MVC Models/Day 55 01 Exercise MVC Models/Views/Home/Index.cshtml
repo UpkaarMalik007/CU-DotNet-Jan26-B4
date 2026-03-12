@@ -1,0 +1,47 @@
+﻿@model List<Day_55_01_Exercise_MVC_Models.Models.Employee>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class ="container mt-4">
+
+    <h2>@ViewData["DepartmentName"] Dashboard</h2>
+
+    <div class="alert alert-warning text-center">
+        <strong>Announcement:</strong> @ViewBag.Announcement
+    </div>
+    
+
+    @if ((bool)ViewData["ServerStatus"])
+    {
+        <div class="alert alert-success">Deparment Active</div>
+    }
+    else
+    {
+        <div class="alert alert-danger">Under Maintenance</div>
+    }
+
+    <table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Salary</th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+            @foreach(var emp in Model)
+            {
+                <tr>
+                    <td>@emp.Id</td>
+                    <td>@emp.Name</td>
+                    <td>@emp.Position</td>
+                    <td>@emp.Salary</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
