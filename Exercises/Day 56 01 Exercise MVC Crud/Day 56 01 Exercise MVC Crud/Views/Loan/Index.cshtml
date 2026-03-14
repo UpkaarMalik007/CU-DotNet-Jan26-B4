@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Day_56_01_Exercise_MVC_Crud.Models.Loan>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model=> model.Id)</th>
+            <th>@Html.DisplayNameFor(model => model.BorrowerName)</th>
+            <th>@Html.DisplayNameFor(model => model.LenderName)</th>
+            <th>@Html.DisplayNameFor(model => model.Amount)</th>
+            <th>@Html.DisplayNameFor(model => model.IsSettled)</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var loan in Model)
+        {
+            <tr>
+                <td>@loan.Id</td>
+                <td>@loan.BorrowerName</td>
+                <td>@loan.LenderName</td>
+                <td>@loan.Amount</td>
+                <td>@loan.IsSettled</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@loan.Id">Edit</a> ||
+                    <a asp-action="Delete" asp-route-id="@loan.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div>
+    <a asp-action="Add">Add</a> 
+</div>

@@ -1,0 +1,121 @@
+﻿@model List<Account>
+
+<h2>Accounts</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Add New Account</a>
+</p>
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>Account Number</th>
+        <th>Account Name</th>
+        <th>Balance</th>
+        <th>Account Actions</th>
+        <th>Transactions</th>
+    </tr>
+
+    @foreach (var acc in Model)
+    {
+        <tr>
+
+            <td>@acc.AccountNumber</td>
+
+            <td>@acc.AccountName</td>
+
+            <td>@acc.Balance</td>
+
+            <td>
+                <a asp-controller="Account"
+                   asp-action="Edit"
+                   asp-route-id="@acc.Id"
+                   class="btn btn-warning btn-sm">Edit</a>
+
+                <a asp-controller="Account"
+                   asp-action="Delete"
+                   asp-route-id="@acc.Id"
+                   class="btn btn-danger btn-sm">Delete</a>
+
+                <a asp-controller="Transaction"
+                   asp-action="Create"
+                   asp-route-accountId="@acc.Id"
+                   class="btn btn-success btn-sm">Add Transaction</a>
+            </td>
+
+            <td>
+
+                <table class="table table-sm table-bordered">
+
+                    <tr>
+                        <th>Description</th>
+                        <th>Amount</th>
+                        <th>Category</th>
+                        <th>Date</th>
+                        <th>Actions</th>
+                    </tr>
+
+                    @foreach (var t in acc.Transactions)
+                    {
+                        <tr>
+                            <td>@t.Description</td>
+                            <td>@t.Amount</td>
+                            <td>@t.Category</td>
+                            <td>@t.Date</td>
+
+                            <td>
+                                <a asp-controller="Transaction"
+                                   asp-action="Edit"
+                                   asp-route-id="@t.Id"
+                                   class="btn btn-warning btn-sm">Edit</a>
+
+                                <a asp-controller="Transaction"
+                                   asp-action="Delete"
+                                   asp-route-id="@t.Id"
+                                   class="btn btn-danger btn-sm">Delete</a>
+
+                                
+                            </td>
+
+                        </tr>
+                    }
+
+                </table>
+
+            </td>
+
+        </tr>
+    }
+
+</table>
+
+@if (TempData["Success"] != null)
+{
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+
+        <div id="liveToast" class="toast show bg-success text-white">
+
+            <div class="toast-header">
+                <strong class="me-auto">Success</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+            </div>
+
+            <div class="toast-body">
+                @TempData["Success"]
+            </div>
+
+        </div>
+
+    </div>
+
+    
+}
+<script>
+    window.onload = function () {
+        var toastEl = document.getElementById('successToast');
+        if (toastEl != null) {
+            var toast = new bootstrap.Toast(toastEl);
+            toast.show();
+        }
+    };
+</script>
