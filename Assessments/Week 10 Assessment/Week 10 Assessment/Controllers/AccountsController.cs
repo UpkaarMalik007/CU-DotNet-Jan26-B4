@@ -110,7 +110,7 @@ namespace Week_10_Assessment.Controllers
         public async Task<IActionResult> Delete(int? id)
         {
             var account = _context.Accounts.FirstOrDefault(a => a.Id == id);
-
+            
             if (account == null)
             {
                 return NotFound();

@@ -1,4 +1,4 @@
-﻿@model List<Account>
+﻿@model IEnumerable<Week_10_Assessment.Models.Account>
 
 <h2>Accounts</h2>
 
@@ -8,85 +8,78 @@
 
 <table class="table table-bordered">
 
-    <tr>
-        <th>Account Number</th>
-        <th>Account Name</th>
-        <th>Balance</th>
-        <th>Account Actions</th>
-        <th>Transactions</th>
-    </tr>
-
-    @foreach (var acc in Model)
-    {
+    <thead>
         <tr>
-
-            <td>@acc.AccountNumber</td>
-
-            <td>@acc.AccountName</td>
-
-            <td>@acc.Balance</td>
-
-            <td>
-                <a asp-controller="Account"
-                   asp-action="Edit"
-                   asp-route-id="@acc.Id"
-                   class="btn btn-warning btn-sm">Edit</a>
-
-                <a asp-controller="Account"
-                   asp-action="Delete"
-                   asp-route-id="@acc.Id"
-                   class="btn btn-danger btn-sm">Delete</a>
-
-                <a asp-controller="Transaction"
-                   asp-action="Create"
-                   asp-route-accountId="@acc.Id"
-                   class="btn btn-success btn-sm">Add Transaction</a>
-            </td>
-
-            <td>
-
-                <table class="table table-sm table-bordered">
-
-                    <tr>
-                        <th>Description</th>
-                        <th>Amount</th>
-                        <th>Category</th>
-                        <th>Date</th>
-                        <th>Actions</th>
-                    </tr>
-
-                    @foreach (var t in acc.Transactions)
-                    {
-                        <tr>
-                            <td>@t.Description</td>
-                            <td>@t.Amount</td>
-                            <td>@t.Category</td>
-                            <td>@t.Date</td>
-
-                            <td>
-                                <a asp-controller="Transaction"
-                                   asp-action="Edit"
-                                   asp-route-id="@t.Id"
-                                   class="btn btn-warning btn-sm">Edit</a>
-
-                                <a asp-controller="Transaction"
-                                   asp-action="Delete"
-                                   asp-route-id="@t.Id"
-                                   class="btn btn-danger btn-sm">Delete</a>
-
-                                
-                            </td>
-
-                        </tr>
-                    }
-
-                </table>
-
-            </td>
-
+            <th>@Html.DisplayNameFor(model => model.AccountNumber)</th>
+            <th>@Html.DisplayNameFor(model => model.AccountName)</th>
+            <th>@Html.DisplayNameFor(model => model.Balance)</th>
+            <th>Account Actions</th>
+            <th>Transactions</th>
         </tr>
-    }
+    </thead>
 
+    <tbody>
+        @foreach (var acc in Model)
+        {
+            <tr>
+                <td>@acc.AccountNumber</td>
+                <td>@acc.AccountName</td>
+                <td>@acc.Balance</td>
+
+                <td>
+                    <a asp-controller="Accounts"
+                       asp-action="Edit"
+                       asp-route-id="@acc.Id"
+                       class="btn btn-warning btn-sm">Edit</a>
+
+                    <a asp-controller="Accounts"
+                       asp-action="Delete"
+                       asp-route-id="@acc.Id"
+                       class="btn btn-danger btn-sm">Delete</a>
+
+                    <a asp-controller="Transactions"
+                       asp-action="Create"
+                       asp-route-accountId="@acc.Id"
+                       class="btn btn-success btn-sm">Add Transaction</a>
+                </td>
+
+                <td>
+                    <table class="table table-sm table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Description</th>
+                                <th>Amount</th>
+                                <th>Category</th>
+                                <th>Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (acc.Transactions != null)
+                            {
+                                @foreach (var t in acc.Transactions)
+                                {
+                                    <tr>
+                                        <td>@t.Description</td>
+                                        <td>@t.Amount</td>
+                                        <td>@t.Category</td>
+                                        <td>@t.Date.ToShortDateString()</td>
+                                        <td>
+
+                                            <a asp-controller="Transactions"
+                                               asp-action="Delete"
+                                               asp-route-id="@t.Id"
+                                               class="btn btn-danger btn-sm">Delete</a>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        }
+    </tbody>
 </table>
 
 @if (TempData["Success"] != null)

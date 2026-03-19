@@ -85,10 +85,14 @@ namespace Week_10_Assessment.Controllers
         }
 
         // GET: Transactions/Create
-        public IActionResult Create()
+        public IActionResult Create(int accountId)
         {
-            ViewBag.AccountId = new SelectList(_context.Accounts, "Id", "AccountName");
-            return View(); ;
+            var transaction = new Transaction
+            {
+                AccountId = accountId,
+                Date = DateTime.Now
+            };
+            return View(transaction); ;
         }
 
         // POST: Transactions/Create
@@ -100,13 +104,30 @@ namespace Week_10_Assessment.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(transaction);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                var account = _context.Accounts.Find(transaction.AccountId);
+                if (account != null)
+                {
+                    var category = transaction.Category?.Trim().ToLower();
+                    if (category == "expense")
+                    {
+                        account.Balance -= transaction.Amount;
+                    }
+                    else if (category == "income")
+                    {
+                        account.Balance += transaction.Amount;
+                    }
+
+                    _context.Transactions.Add(transaction);
+                    _context.SaveChanges();
+
+                    TempData["Success"] = "Transaction added successfully!";
+                    return RedirectToAction("Index", "Account");
+                }
             }
-            ViewData["AccountId"] = new SelectList(_context.Accounts, "Id", "Id", transaction.AccountId);
+
             return View(transaction);
         }
+        
 
         // GET: Transactions/Edit/5
         public async Task<IActionResult> Edit(int? id)
