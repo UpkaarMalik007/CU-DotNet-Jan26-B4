@@ -1,0 +1,6 @@
+@LoanDTOManagement_HostAddress = http://localhost:5028
+
+GET {{LoanDTOManagement_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

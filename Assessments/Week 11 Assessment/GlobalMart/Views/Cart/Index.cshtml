@@ -1,0 +1,109 @@
+﻿@model List<GlobalMart.ViewModel.CartViewModel>
+
+<style>
+    body {
+        font-family: Arial;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th, td {
+        padding: 12px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background: #f4f4f4;
+    }
+
+    .green {
+        color: green;
+        font-weight: bold;
+    }
+
+    .summary {
+        margin-top: 20px;
+        padding: 15px;
+        background: #f9f9f9;
+    }
+
+    .btn {
+        padding: 8px 14px;
+        background: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    .danger {
+        background: red;
+    }
+</style>
+
+<h2>GlobalMart — Shopping Cart</h2>
+
+@if (!Model.Any())
+{
+    <p>Your cart is empty.</p>
+    <a href="/Products/Index">← Continue Shopping</a>
+}
+else
+{
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Product Name</th>
+                <th>Original Price</th>
+                <th>Final Price</th>
+                <th>Promo Applied</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                <tr>
+                    <td>@(i + 1)</td>
+                    <td>@Model[i].Name</td>
+                    <td>$@Model[i].OriginalPrice.ToString("0.00")</td>
+                    <td class="@(Model[i].FinalPrice < Model[i].OriginalPrice ? "green" : "")">
+                        $@Model[i].FinalPrice.ToString("0.00")
+                    </td>
+                    <td>@Model[i].PromoCode</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    var totalOriginal = Model.Sum(x => x.OriginalPrice);
+    var totalFinal = Model.Sum(x => x.FinalPrice);
+    var savings = totalOriginal - totalFinal;
+
+    <div class="summary">
+        <p>Total Original: $@totalOriginal.ToString("0.00")</p>
+        <p class="green">Total Final: $@totalFinal.ToString("0.00")</p>
+        <p><strong>You Save: $@savings.ToString("0.00")</strong></p>
+    </div>
+
+    <form method="post" action="/Cart/ApplyPromo">
+        <select name="promoCode">
+            <option value="">-- No Promo Code --</option>
+            <option value="WINTER25">WINTER25 — 15% Off Everything</option>
+            <option value="FREESHIP">FREESHIP — $5.00 Off Each Item</option>
+        </select>
+        <br />
+        <button class="btn">Apply Promo to All Items ✅</button>
+    </form>
+
+    <form method="post" action="/Cart/Clear">
+        <button class="btn danger">Clear Cart 🗑️</button>
+    </form>
+
+    <br />
+    <a href="/Products/Index">← Continue Shopping</a>
+}
