@@ -1,31 +1,31 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using AccountService.Data;
+using AccountService.DTOs;
+using AccountService.Models;
+using AccountService.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using SmartBank.Data;
-using SmartBank.DTOs;
-using SmartBank.Models;
-using SmartBank.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SmartBank.Controllers
+namespace AccountService.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     [Authorize]
     public class AccountsController : ControllerBase
     {
-        private readonly IAccountService _service;
+        private readonly IAccountServices _service;
 
-        public AccountsController(IAccountService service)
+        public AccountsController(IAccountServices service)
         {
             _service = service;
         }
 
-        
+
         [HttpGet]
         public async Task<IActionResult> GetAccounts()
         {
@@ -33,7 +33,7 @@ namespace SmartBank.Controllers
             return Ok(result);
         }
 
-        
+
         [HttpGet("{id}")]
         public async Task<IActionResult> GetAccount(int id)
         {
@@ -41,7 +41,7 @@ namespace SmartBank.Controllers
             return Ok(result);
         }
 
-        
+
         [HttpPost]
         public async Task<IActionResult> CreateAccount(CreateAccountDto dto)
         {
@@ -49,7 +49,7 @@ namespace SmartBank.Controllers
             return Ok(result);
         }
 
-        
+
         [HttpPost("deposit")]
         public async Task<IActionResult> Deposit(TransactionDto dto)
         {
@@ -57,7 +57,7 @@ namespace SmartBank.Controllers
             return Ok("Deposit successful");
         }
 
-        
+
         [HttpPost("withdraw")]
         public async Task<IActionResult> Withdraw(TransactionDto dto)
         {

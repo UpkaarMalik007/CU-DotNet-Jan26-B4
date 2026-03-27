@@ -1,9 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
 using SmartBank.Data;
 using SmartBank.Exceptions;
 using SmartBank.Repositories;
 using SmartBank.Services;
+using System.Text;
 
 namespace SmartBank
 {
@@ -22,7 +25,20 @@ namespace SmartBank
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-
+            // JWT Service
+            builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            .AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidIssuer = "SmartBank",
+                    ValidAudience = "SmartBankUsers",
+                    IssuerSigningKey = new SymmetricSecurityKey(
+                        Encoding.UTF8.GetBytes("ThisIsASecretKeyWithAtLeast32Characters!!"))
+                };
+            });
             var app = builder.Build();
             app.UseMiddleware<GlobalExceptionMiddleware>();
 
@@ -34,7 +50,7 @@ namespace SmartBank
             }
 
             app.UseHttpsRedirection();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
 

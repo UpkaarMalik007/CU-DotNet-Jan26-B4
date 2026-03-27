@@ -1,7 +1,6 @@
 ﻿using System.Net;
-using System.Text.Json;
 
-namespace SmartBank.Exceptions
+namespace AccountService.Exceptions
 {
     public class GlobalExceptionMiddleware
     {
@@ -27,18 +26,10 @@ namespace SmartBank.Exceptions
                     _ => (int)HttpStatusCode.InternalServerError
                 };
 
-                var response = new
-                {
-                    StatusCode = statusCode,
-                    Message = ex.Message,
-                    Success = false
-                };
-
-                context.Response.ContentType = "application/json";
+                context.Response.ContentType = "text/plain";
                 context.Response.StatusCode = statusCode;
 
-                var json = JsonSerializer.Serialize(response);
-                await context.Response.WriteAsync(json);
+                await context.Response.WriteAsync(ex.Message);
             }
         }
     }
