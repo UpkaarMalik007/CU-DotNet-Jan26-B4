@@ -1,0 +1,6 @@
+<Solution>
+  <Folder Name="/Services/">
+    <Project Path="IdentityService/IdentityService.csproj" Id="74acb257-3425-4e4d-ac9e-64810d90c21c" />
+    <Project Path="TrackingService/TrackingService.csproj" Id="ba8ae2f4-c78f-4844-9129-f0d5c04ec02f" />
+  </Folder>
+</Solution>
