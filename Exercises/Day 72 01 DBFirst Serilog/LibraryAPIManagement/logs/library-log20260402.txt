@@ -1,0 +1,509 @@
+2026-04-02 12:13:08.491 +05:30 [INF] Now listening on: https://localhost:7025
+2026-04-02 12:13:08.538 +05:30 [INF] Now listening on: http://localhost:5238
+2026-04-02 12:13:08.657 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-02 12:13:08.659 +05:30 [INF] Hosting environment: Development
+2026-04-02 12:13:08.661 +05:30 [INF] Content root path: E:\.net source\CU-DotNet-Jan26-B4\Exercises\LibraryAPIManagement\LibraryAPIManagement
+2026-04-02 12:13:09.577 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/swagger - null null
+2026-04-02 12:13:10.136 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/swagger - 301 null null 581.0733ms
+2026-04-02 12:13:10.139 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/swagger/index.html - null null
+2026-04-02 12:13:10.357 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/swagger/index.html - 200 null text/html;charset=utf-8 217.7334ms
+2026-04-02 12:13:10.386 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/swagger/swagger-ui.css - null null
+2026-04-02 12:13:10.387 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/swagger/swagger-ui-bundle.js - null null
+2026-04-02 12:13:10.387 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/swagger/swagger-ui-standalone-preset.js - null null
+2026-04-02 12:13:10.408 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-02 12:13:10.408 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/_vs/browserLink - null null
+2026-04-02 12:13:10.454 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - 200 16525 application/javascript; charset=utf-8 46.2106ms
+2026-04-02 12:13:10.494 +05:30 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2026-04-02 12:13:10.494 +05:30 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2026-04-02 12:13:10.504 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/swagger/swagger-ui.css - 200 152034 text/css 117.8561ms
+2026-04-02 12:13:10.512 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/swagger/swagger-ui-standalone-preset.js - 200 230280 text/javascript 124.4379ms
+2026-04-02 12:13:10.591 +05:30 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2026-04-02 12:13:10.593 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/swagger/swagger-ui-bundle.js - 200 1456926 text/javascript 206.3912ms
+2026-04-02 12:13:10.645 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/_vs/browserLink - 200 null text/javascript; charset=UTF-8 237.2974ms
+2026-04-02 12:13:11.005 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/swagger/v1/swagger.json - null null
+2026-04-02 12:13:11.045 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 41.1546ms
+2026-04-02 12:13:11.076 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/swagger/favicon-32x32.png - null null
+2026-04-02 12:13:11.088 +05:30 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2026-04-02 12:13:11.091 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/swagger/favicon-32x32.png - 200 628 image/png 15.164ms
+2026-04-02 12:13:16.655 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/api/Books - null null
+2026-04-02 12:13:16.676 +05:30 [INF] Executing endpoint 'LibraryAPIManagement.Controllers.BooksController.GetBooks (LibraryAPIManagement)'
+2026-04-02 12:13:16.732 +05:30 [INF] Route matched with {action = "GetBooks", controller = "Books"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[LibraryAPIManagement.Models.Book]]] GetBooks() on controller LibraryAPIManagement.Controllers.BooksController (LibraryAPIManagement).
+2026-04-02 12:13:16.749 +05:30 [INF] Executed action LibraryAPIManagement.Controllers.BooksController.GetBooks (LibraryAPIManagement) in 6.8117ms
+2026-04-02 12:13:16.755 +05:30 [INF] Executed endpoint 'LibraryAPIManagement.Controllers.BooksController.GetBooks (LibraryAPIManagement)'
+2026-04-02 12:13:16.762 +05:30 [ERR] HTTP GET /api/Books responded 500 in 88.2481 ms
+System.InvalidOperationException: Unable to resolve service for type 'LibraryAPIManagement.Data.MyAppDbContext' while attempting to activate 'LibraryAPIManagement.Controllers.BooksController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method9(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-04-02 12:13:16.928 +05:30 [ERR] Unhandled exception occurred
+System.InvalidOperationException: Unable to resolve service for type 'LibraryAPIManagement.Data.MyAppDbContext' while attempting to activate 'LibraryAPIManagement.Controllers.BooksController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method9(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at LibraryAPIManagement.ExceptionsMiddleware.ExceptionMiddleware.InvokeAsync(HttpContext context) in E:\.net source\CU-DotNet-Jan26-B4\Exercises\LibraryAPIManagement\LibraryAPIManagement\ExceptionsMiddleware\ExceptionMiddleware.cs:line 19
+2026-04-02 12:13:16.963 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/api/Books - 500 null application/json 320.6526ms
+2026-04-02 12:15:22.394 +05:30 [INF] Now listening on: https://localhost:7025
+2026-04-02 12:15:22.431 +05:30 [INF] Now listening on: http://localhost:5238
+2026-04-02 12:15:22.518 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-02 12:15:22.519 +05:30 [INF] Hosting environment: Development
+2026-04-02 12:15:22.522 +05:30 [INF] Content root path: E:\.net source\CU-DotNet-Jan26-B4\Exercises\LibraryAPIManagement\LibraryAPIManagement
+2026-04-02 12:15:22.782 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/swagger/index.html - null null
+2026-04-02 12:15:22.985 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/swagger/index.html - 200 null text/html;charset=utf-8 205.1114ms
+2026-04-02 12:15:23.037 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/_vs/browserLink - null null
+2026-04-02 12:15:23.037 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-02 12:15:23.058 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - 200 16525 application/javascript; charset=utf-8 20.3923ms
+2026-04-02 12:15:23.098 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/_vs/browserLink - 200 null text/javascript; charset=UTF-8 61.8304ms
+2026-04-02 12:15:23.510 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/swagger/v1/swagger.json - null null
+2026-04-02 12:15:23.529 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 19.3372ms
+2026-04-02 12:15:28.573 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/api/Books - null null
+2026-04-02 12:15:28.601 +05:30 [INF] Executing endpoint 'LibraryAPIManagement.Controllers.BooksController.GetBooks (LibraryAPIManagement)'
+2026-04-02 12:15:28.628 +05:30 [INF] Route matched with {action = "GetBooks", controller = "Books"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[LibraryAPIManagement.Models.Book]]] GetBooks() on controller LibraryAPIManagement.Controllers.BooksController (LibraryAPIManagement).
+2026-04-02 12:15:28.640 +05:30 [INF] Executed action LibraryAPIManagement.Controllers.BooksController.GetBooks (LibraryAPIManagement) in 1.7895ms
+2026-04-02 12:15:28.646 +05:30 [INF] Executed endpoint 'LibraryAPIManagement.Controllers.BooksController.GetBooks (LibraryAPIManagement)'
+2026-04-02 12:15:28.653 +05:30 [ERR] HTTP GET /api/Books responded 500 in 52.8272 ms
+System.InvalidOperationException: Unable to resolve service for type 'LibraryAPIManagement.Data.MyAppDbContext' while attempting to activate 'LibraryAPIManagement.Controllers.BooksController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method9(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-04-02 12:15:28.682 +05:30 [ERR] Unhandled exception occurred
+System.InvalidOperationException: Unable to resolve service for type 'LibraryAPIManagement.Data.MyAppDbContext' while attempting to activate 'LibraryAPIManagement.Controllers.BooksController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method9(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at LibraryAPIManagement.ExceptionsMiddleware.ExceptionMiddleware.InvokeAsync(HttpContext context) in E:\.net source\CU-DotNet-Jan26-B4\Exercises\LibraryAPIManagement\LibraryAPIManagement\ExceptionsMiddleware\ExceptionMiddleware.cs:line 19
+2026-04-02 12:15:28.711 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/api/Books - 500 null application/json 138.8784ms
+2026-04-02 12:17:45.000 +05:30 [INF] Now listening on: https://localhost:7025
+2026-04-02 12:17:45.045 +05:30 [INF] Now listening on: http://localhost:5238
+2026-04-02 12:17:45.149 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-02 12:17:45.151 +05:30 [INF] Hosting environment: Development
+2026-04-02 12:17:45.153 +05:30 [INF] Content root path: E:\.net source\CU-DotNet-Jan26-B4\Exercises\LibraryAPIManagement\LibraryAPIManagement
+2026-04-02 12:17:45.703 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/swagger/index.html - null null
+2026-04-02 12:17:46.022 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-02 12:17:46.024 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/swagger/index.html - 200 null text/html;charset=utf-8 333.9658ms
+2026-04-02 12:17:46.054 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - 200 16525 application/javascript; charset=utf-8 32.8421ms
+2026-04-02 12:17:46.055 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/_vs/browserLink - null null
+2026-04-02 12:17:46.132 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/_vs/browserLink - 200 null text/javascript; charset=UTF-8 76.5095ms
+2026-04-02 12:17:46.288 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/swagger/v1/swagger.json - null null
+2026-04-02 12:17:46.308 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 20.1216ms
+2026-04-02 12:17:51.192 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/api/Books - null null
+2026-04-02 12:17:51.211 +05:30 [INF] Executing endpoint 'LibraryAPIManagement.Controllers.BooksController.GetBooks (LibraryAPIManagement)'
+2026-04-02 12:17:51.249 +05:30 [INF] Route matched with {action = "GetBooks", controller = "Books"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[LibraryAPIManagement.Models.Book]]] GetBooks() on controller LibraryAPIManagement.Controllers.BooksController (LibraryAPIManagement).
+2026-04-02 12:17:52.337 +05:30 [INF] GET api/books endpoint hit
+2026-04-02 12:17:55.582 +05:30 [INF] Executed DbCommand (63ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookId], [b].[AuthorId], [b].[Price], [b].[Title]
+FROM [Books] AS [b]
+2026-04-02 12:17:55.739 +05:30 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[LibraryAPIManagement.Models.Book, LibraryAPIManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-04-02 12:17:55.788 +05:30 [INF] Executed action LibraryAPIManagement.Controllers.BooksController.GetBooks (LibraryAPIManagement) in 4527.4454ms
+2026-04-02 12:17:55.793 +05:30 [INF] Executed endpoint 'LibraryAPIManagement.Controllers.BooksController.GetBooks (LibraryAPIManagement)'
+2026-04-02 12:17:55.803 +05:30 [INF] HTTP GET /api/Books responded 200 in 4591.0593 ms
+2026-04-02 12:17:55.823 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/api/Books - 200 null application/json; charset=utf-8 4641.5304ms
+2026-04-02 12:25:16.137 +05:30 [INF] Now listening on: https://localhost:7025
+2026-04-02 12:25:16.178 +05:30 [INF] Now listening on: http://localhost:5238
+2026-04-02 12:25:16.290 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-02 12:25:16.293 +05:30 [INF] Hosting environment: Development
+2026-04-02 12:25:16.294 +05:30 [INF] Content root path: E:\.net source\CU-DotNet-Jan26-B4\Exercises\LibraryAPIManagement\LibraryAPIManagement
+2026-04-02 12:25:16.915 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/swagger/index.html - null null
+2026-04-02 12:25:17.325 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/swagger/index.html - 200 null text/html;charset=utf-8 422.7501ms
+2026-04-02 12:25:17.404 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-02 12:25:17.404 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/_vs/browserLink - null null
+2026-04-02 12:25:17.421 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - 200 16525 application/javascript; charset=utf-8 17.1832ms
+2026-04-02 12:25:17.476 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/_vs/browserLink - 200 null text/javascript; charset=UTF-8 73.2323ms
+2026-04-02 12:25:17.587 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/swagger/v1/swagger.json - null null
+2026-04-02 12:25:17.614 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 26.4564ms
+2026-04-02 12:25:24.062 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/api/Books - null null
+2026-04-02 12:25:24.092 +05:30 [INF] Executing endpoint 'LibraryAPIManagement.Controllers.BooksController.GetBooks (LibraryAPIManagement)'
+2026-04-02 12:25:24.141 +05:30 [INF] Route matched with {action = "GetBooks", controller = "Books"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[LibraryAPIManagement.Models.Book]]] GetBooks() on controller LibraryAPIManagement.Controllers.BooksController (LibraryAPIManagement).
+2026-04-02 12:25:24.426 +05:30 [INF] GET api/books endpoint hit
+2026-04-02 12:25:26.643 +05:30 [INF] Executed DbCommand (67ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookId], [b].[AuthorId], [b].[Price], [b].[Title], [a].[AuthorId], [a].[Email], [a].[Name]
+FROM [Books] AS [b]
+INNER JOIN [Authors] AS [a] ON [b].[AuthorId] = [a].[AuthorId]
+2026-04-02 12:25:26.847 +05:30 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[LibraryAPIManagement.Models.Book, LibraryAPIManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-04-02 12:25:26.894 +05:30 [INF] Executed action LibraryAPIManagement.Controllers.BooksController.GetBooks (LibraryAPIManagement) in 2739.3866ms
+2026-04-02 12:25:26.900 +05:30 [INF] Executed endpoint 'LibraryAPIManagement.Controllers.BooksController.GetBooks (LibraryAPIManagement)'
+2026-04-02 12:25:26.908 +05:30 [INF] HTTP GET /api/Books responded 200 in 2819.1275 ms
+2026-04-02 12:25:26.928 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/api/Books - 200 null application/json; charset=utf-8 2867.3533ms
+2026-04-02 12:33:20.297 +05:30 [INF] Now listening on: https://localhost:7025
+2026-04-02 12:33:20.342 +05:30 [INF] Now listening on: http://localhost:5238
+2026-04-02 12:33:20.506 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-02 12:33:20.508 +05:30 [INF] Hosting environment: Development
+2026-04-02 12:33:20.511 +05:30 [INF] Content root path: E:\.net source\CU-DotNet-Jan26-B4\Exercises\LibraryAPIManagement\LibraryAPIManagement
+2026-04-02 12:33:20.648 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/swagger/index.html - null null
+2026-04-02 12:33:21.022 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/swagger/index.html - 200 null text/html;charset=utf-8 388.4511ms
+2026-04-02 12:33:21.073 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/_vs/browserLink - null null
+2026-04-02 12:33:21.073 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-02 12:33:21.092 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - 200 16525 application/javascript; charset=utf-8 18.8652ms
+2026-04-02 12:33:21.142 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/_vs/browserLink - 200 null text/javascript; charset=UTF-8 68.9465ms
+2026-04-02 12:33:21.287 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/swagger/v1/swagger.json - null null
+2026-04-02 12:33:21.309 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 21.9684ms
+2026-04-02 12:33:27.387 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/api/Books - null null
+2026-04-02 12:33:27.421 +05:30 [INF] Executing endpoint 'LibraryAPIManagement.Controllers.BooksController.GetBooks (LibraryAPIManagement)'
+2026-04-02 12:33:27.479 +05:30 [INF] Route matched with {action = "GetBooks", controller = "Books"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[LibraryAPIManagement.Models.Book]]] GetBooks() on controller LibraryAPIManagement.Controllers.BooksController (LibraryAPIManagement).
+2026-04-02 12:33:27.809 +05:30 [INF] GET api/books endpoint hit
+2026-04-02 12:33:29.922 +05:30 [INF] Executed DbCommand (55ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookId], [b].[AuthorId], [b].[Price], [b].[Title], [a].[AuthorId], [a].[Email], [a].[Name]
+FROM [Books] AS [b]
+INNER JOIN [Authors] AS [a] ON [b].[AuthorId] = [a].[AuthorId]
+2026-04-02 12:33:30.096 +05:30 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[LibraryAPIManagement.Models.Book, LibraryAPIManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-04-02 12:33:30.144 +05:30 [INF] Executed action LibraryAPIManagement.Controllers.BooksController.GetBooks (LibraryAPIManagement) in 2654.1577ms
+2026-04-02 12:33:30.148 +05:30 [INF] Executed endpoint 'LibraryAPIManagement.Controllers.BooksController.GetBooks (LibraryAPIManagement)'
+2026-04-02 12:33:30.154 +05:30 [INF] HTTP GET /api/Books responded 200 in 2738.1106 ms
+2026-04-02 12:33:30.171 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/api/Books - 200 null application/json; charset=utf-8 2783.5056ms
+2026-04-02 12:42:18.904 +05:30 [INF] Now listening on: https://localhost:7025
+2026-04-02 12:42:18.947 +05:30 [INF] Now listening on: http://localhost:5238
+2026-04-02 12:42:19.059 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-02 12:42:19.060 +05:30 [INF] Hosting environment: Development
+2026-04-02 12:42:19.062 +05:30 [INF] Content root path: E:\.net source\CU-DotNet-Jan26-B4\Exercises\LibraryAPIManagement\LibraryAPIManagement
+2026-04-02 12:42:19.640 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/swagger/index.html - null null
+2026-04-02 12:42:20.062 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/swagger/index.html - 200 null text/html;charset=utf-8 437.6103ms
+2026-04-02 12:42:20.115 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/_vs/browserLink - null null
+2026-04-02 12:42:20.115 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-02 12:42:20.142 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - 200 16525 application/javascript; charset=utf-8 27.6997ms
+2026-04-02 12:42:20.196 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/_vs/browserLink - 200 null text/javascript; charset=UTF-8 81.8068ms
+2026-04-02 12:42:20.336 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/swagger/v1/swagger.json - null null
+2026-04-02 12:42:20.351 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 14.5182ms
+2026-04-02 12:42:26.651 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/api/Books - null null
+2026-04-02 12:42:26.667 +05:30 [INF] Executing endpoint 'LibraryAPIManagement.Controllers.BooksController.GetBooks (LibraryAPIManagement)'
+2026-04-02 12:42:26.705 +05:30 [INF] Route matched with {action = "GetBooks", controller = "Books"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetBooks() on controller LibraryAPIManagement.Controllers.BooksController (LibraryAPIManagement).
+2026-04-02 12:42:27.010 +05:30 [INF] GET api/books endpoint hit
+2026-04-02 12:42:29.097 +05:30 [INF] Executed DbCommand (58ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookId], [b].[Title], [b].[Price], [a].[Name] AS [AuthorName]
+FROM [Books] AS [b]
+INNER JOIN [Authors] AS [a] ON [b].[AuthorId] = [a].[AuthorId]
+2026-04-02 12:42:29.169 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType0`4[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Nullable`1[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LibraryAPIManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-04-02 12:42:29.213 +05:30 [INF] Executed action LibraryAPIManagement.Controllers.BooksController.GetBooks (LibraryAPIManagement) in 2496.5266ms
+2026-04-02 12:42:29.218 +05:30 [INF] Executed endpoint 'LibraryAPIManagement.Controllers.BooksController.GetBooks (LibraryAPIManagement)'
+2026-04-02 12:42:29.224 +05:30 [INF] HTTP GET /api/Books responded 200 in 2557.6012 ms
+2026-04-02 12:42:29.240 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/api/Books - 200 null application/json; charset=utf-8 2589.1699ms
+2026-04-02 15:24:31.439 +05:30 [INF] Now listening on: https://localhost:7025
+2026-04-02 15:24:31.490 +05:30 [INF] Now listening on: http://localhost:5238
+2026-04-02 15:24:31.756 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-02 15:24:31.758 +05:30 [INF] Hosting environment: Development
+2026-04-02 15:24:31.760 +05:30 [INF] Content root path: E:\.net source\CU-DotNet-Jan26-B4\Exercises\LibraryAPIManagement\LibraryAPIManagement
+2026-04-02 15:24:32.041 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/swagger - null null
+2026-04-02 15:24:32.222 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/swagger - 301 null null 191.5836ms
+2026-04-02 15:24:32.228 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/swagger/index.html - null null
+2026-04-02 15:24:32.394 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/swagger/index.html - 200 null text/html;charset=utf-8 165.822ms
+2026-04-02 15:24:32.396 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/swagger/swagger-ui.css - null null
+2026-04-02 15:24:32.397 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/swagger/swagger-ui-bundle.js - null null
+2026-04-02 15:24:32.397 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/swagger/swagger-ui-standalone-preset.js - null null
+2026-04-02 15:24:32.425 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/_vs/browserLink - null null
+2026-04-02 15:24:32.426 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-02 15:24:32.508 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - 200 16525 application/javascript; charset=utf-8 82.3113ms
+2026-04-02 15:24:32.511 +05:30 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2026-04-02 15:24:32.511 +05:30 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2026-04-02 15:24:32.531 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/swagger/swagger-ui-standalone-preset.js - 200 230280 text/javascript 134.0005ms
+2026-04-02 15:24:32.531 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/swagger/swagger-ui.css - 200 152034 text/css 134.9426ms
+2026-04-02 15:24:32.582 +05:30 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2026-04-02 15:24:32.596 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/swagger/swagger-ui-bundle.js - 200 1456926 text/javascript 199.0599ms
+2026-04-02 15:24:32.604 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/_vs/browserLink - 200 null text/javascript; charset=UTF-8 178.9202ms
+2026-04-02 15:24:32.781 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/swagger/v1/swagger.json - null null
+2026-04-02 15:24:32.791 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 10.715ms
+2026-04-02 15:24:32.815 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/swagger/favicon-32x32.png - null null
+2026-04-02 15:24:32.820 +05:30 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2026-04-02 15:24:32.823 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/swagger/favicon-32x32.png - 200 628 image/png 8.5333ms
+2026-04-02 15:26:05.585 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7025/api/Books - application/json 157
+2026-04-02 15:26:05.607 +05:30 [INF] Executing endpoint 'LibraryAPIManagement.Controllers.BooksController.PostBook (LibraryAPIManagement)'
+2026-04-02 15:26:05.659 +05:30 [INF] Route matched with {action = "PostBook", controller = "Books"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[LibraryAPIManagement.Models.Book]] PostBook(LibraryAPIManagement.Models.Book) on controller LibraryAPIManagement.Controllers.BooksController (LibraryAPIManagement).
+2026-04-02 15:26:06.023 +05:30 [INF] Adding new book stranger Things
+2026-04-02 15:26:08.264 +05:30 [ERR] Failed executing DbCommand (282ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 100), @p2='?' (Size = 100), @p3='?' (DbType = Int32), @p4='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p5='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Authors] ([AuthorId], [Email], [Name])
+VALUES (@p0, @p1, @p2);
+INSERT INTO [Books] ([AuthorId], [Price], [Title])
+OUTPUT INSERTED.[BookId]
+VALUES (@p3, @p4, @p5);
+2026-04-02 15:26:08.358 +05:30 [ERR] An exception occurred in the database while saving changes for context type 'LibraryAPIManagement.Data.MyAppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert explicit value for identity column in table 'Authors' when IDENTITY_INSERT is set to OFF.
+The INSERT statement conflicted with the FOREIGN KEY constraint "FK__Books__AuthorId__4D94879B". The conflict occurred in database "LibraryDB", table "dbo.Authors", column 'AuthorId'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:471a4c31-ea87-4230-a922-f3b0a837b981
+Error Number:544,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert explicit value for identity column in table 'Authors' when IDENTITY_INSERT is set to OFF.
+The INSERT statement conflicted with the FOREIGN KEY constraint "FK__Books__AuthorId__4D94879B". The conflict occurred in database "LibraryDB", table "dbo.Authors", column 'AuthorId'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:471a4c31-ea87-4230-a922-f3b0a837b981
+Error Number:544,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2026-04-02 15:26:08.529 +05:30 [INF] Executed action LibraryAPIManagement.Controllers.BooksController.PostBook (LibraryAPIManagement) in 2855.7429ms
+2026-04-02 15:26:08.537 +05:30 [INF] Executed endpoint 'LibraryAPIManagement.Controllers.BooksController.PostBook (LibraryAPIManagement)'
+2026-04-02 15:26:08.545 +05:30 [ERR] HTTP POST /api/Books responded 500 in 2937.6085 ms
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert explicit value for identity column in table 'Authors' when IDENTITY_INSERT is set to OFF.
+The INSERT statement conflicted with the FOREIGN KEY constraint "FK__Books__AuthorId__4D94879B". The conflict occurred in database "LibraryDB", table "dbo.Authors", column 'AuthorId'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:471a4c31-ea87-4230-a922-f3b0a837b981
+Error Number:544,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at LibraryAPIManagement.Controllers.BooksController.PostBook(Book book) in E:\.net source\CU-DotNet-Jan26-B4\Exercises\LibraryAPIManagement\LibraryAPIManagement\Controllers\BooksController.cs:line 74
+   at lambda_method5(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-04-02 15:26:08.769 +05:30 [ERR] Unhandled exception occurred
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert explicit value for identity column in table 'Authors' when IDENTITY_INSERT is set to OFF.
+The INSERT statement conflicted with the FOREIGN KEY constraint "FK__Books__AuthorId__4D94879B". The conflict occurred in database "LibraryDB", table "dbo.Authors", column 'AuthorId'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:471a4c31-ea87-4230-a922-f3b0a837b981
+Error Number:544,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at LibraryAPIManagement.Controllers.BooksController.PostBook(Book book) in E:\.net source\CU-DotNet-Jan26-B4\Exercises\LibraryAPIManagement\LibraryAPIManagement\Controllers\BooksController.cs:line 74
+   at lambda_method5(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at LibraryAPIManagement.ExceptionsMiddleware.ExceptionMiddleware.InvokeAsync(HttpContext context) in E:\.net source\CU-DotNet-Jan26-B4\Exercises\LibraryAPIManagement\LibraryAPIManagement\ExceptionsMiddleware\ExceptionMiddleware.cs:line 19
+2026-04-02 15:26:08.820 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7025/api/Books - 500 null application/json 3235.4608ms
+2026-04-02 15:31:03.844 +05:30 [INF] Now listening on: https://localhost:7025
+2026-04-02 15:31:03.885 +05:30 [INF] Now listening on: http://localhost:5238
+2026-04-02 15:31:03.990 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-02 15:31:03.993 +05:30 [INF] Hosting environment: Development
+2026-04-02 15:31:03.995 +05:30 [INF] Content root path: E:\.net source\CU-DotNet-Jan26-B4\Exercises\LibraryAPIManagement\LibraryAPIManagement
+2026-04-02 15:31:04.591 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/swagger/index.html - null null
+2026-04-02 15:31:04.912 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/swagger/index.html - 200 null text/html;charset=utf-8 330.4766ms
+2026-04-02 15:31:04.939 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/_vs/browserLink - null null
+2026-04-02 15:31:04.939 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-02 15:31:04.961 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - 200 16525 application/javascript; charset=utf-8 22.4465ms
+2026-04-02 15:31:04.998 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/_vs/browserLink - 200 null text/javascript; charset=UTF-8 59.7533ms
+2026-04-02 15:31:05.154 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/swagger/v1/swagger.json - null null
+2026-04-02 15:31:05.169 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 15.3259ms
+2026-04-02 15:34:04.906 +05:30 [INF] Now listening on: https://localhost:7025
+2026-04-02 15:34:04.965 +05:30 [INF] Now listening on: http://localhost:5238
+2026-04-02 15:34:05.101 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-02 15:34:05.103 +05:30 [INF] Hosting environment: Development
+2026-04-02 15:34:05.104 +05:30 [INF] Content root path: E:\.net source\CU-DotNet-Jan26-B4\Exercises\LibraryAPIManagement\LibraryAPIManagement
+2026-04-02 15:34:05.236 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/swagger/index.html - null null
+2026-04-02 15:34:05.475 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/swagger/index.html - 200 null text/html;charset=utf-8 249.4289ms
+2026-04-02 15:34:05.510 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/_vs/browserLink - null null
+2026-04-02 15:34:05.510 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-02 15:34:05.532 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - 200 16525 application/javascript; charset=utf-8 19.9934ms
+2026-04-02 15:34:05.613 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/_vs/browserLink - 200 null text/javascript; charset=UTF-8 103.3345ms
+2026-04-02 15:34:05.670 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/swagger/v1/swagger.json - null null
+2026-04-02 15:34:05.682 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 12.6197ms
+2026-04-02 16:08:56.259 +05:30 [INF] Now listening on: https://localhost:7025
+2026-04-02 16:08:56.336 +05:30 [INF] Now listening on: http://localhost:5238
+2026-04-02 16:08:56.702 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-02 16:08:56.708 +05:30 [INF] Hosting environment: Development
+2026-04-02 16:08:56.719 +05:30 [INF] Content root path: E:\.net source\CU-DotNet-Jan26-B4\Exercises\LibraryAPIManagement\LibraryAPIManagement
+2026-04-02 16:08:57.212 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/swagger/index.html - null null
+2026-04-02 16:08:57.757 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/swagger/index.html - 200 null text/html;charset=utf-8 580.193ms
+2026-04-02 16:08:57.786 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-02 16:08:57.803 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - 200 16525 application/javascript; charset=utf-8 17.3968ms
+2026-04-02 16:08:57.814 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/_vs/browserLink - null null
+2026-04-02 16:08:57.896 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/_vs/browserLink - 200 null text/javascript; charset=UTF-8 82.7448ms
+2026-04-02 16:08:58.085 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/swagger/v1/swagger.json - null null
+2026-04-02 16:08:58.114 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 30.5537ms
+2026-04-02 16:09:24.157 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7025/api/Books - application/json 65
+2026-04-02 16:09:24.202 +05:30 [INF] Executing endpoint 'LibraryAPIManagement.Controllers.BooksController.PostBook (LibraryAPIManagement)'
+2026-04-02 16:09:24.278 +05:30 [INF] Route matched with {action = "PostBook", controller = "Books"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[LibraryAPIManagement.Models.Book]] PostBook(LibraryAPIManagement.DTO.CreateBookDto) on controller LibraryAPIManagement.Controllers.BooksController (LibraryAPIManagement).
+2026-04-02 16:09:24.798 +05:30 [INF] Adding new book Stranger Things
+2026-04-02 16:09:27.645 +05:30 [INF] Executed DbCommand (150ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p2='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Books] ([AuthorId], [Price], [Title])
+OUTPUT INSERTED.[BookId]
+VALUES (@p0, @p1, @p2);
+2026-04-02 16:09:28.483 +05:30 [INF] Executed DbCommand (27ms) [Parameters=[@__book_BookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookId], [b].[Title], [b].[Price], [b].[AuthorId], [a].[Name] AS [AuthorName]
+FROM [Books] AS [b]
+INNER JOIN [Authors] AS [a] ON [b].[AuthorId] = [a].[AuthorId]
+WHERE [b].[BookId] = @__book_BookId_0
+2026-04-02 16:09:28.558 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`5[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Nullable`1[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-04-02 16:09:28.607 +05:30 [INF] Executed action LibraryAPIManagement.Controllers.BooksController.PostBook (LibraryAPIManagement) in 4306.8862ms
+2026-04-02 16:09:28.616 +05:30 [INF] Executed endpoint 'LibraryAPIManagement.Controllers.BooksController.PostBook (LibraryAPIManagement)'
+2026-04-02 16:09:28.627 +05:30 [INF] HTTP POST /api/Books responded 200 in 4426.8112 ms
+2026-04-02 16:09:28.658 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7025/api/Books - 200 null application/json; charset=utf-8 4501.5066ms
+2026-04-02 16:10:00.516 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/api/Books/4 - null null
+2026-04-02 16:10:00.552 +05:30 [INF] Executing endpoint 'LibraryAPIManagement.Controllers.BooksController.GetBook (LibraryAPIManagement)'
+2026-04-02 16:10:00.570 +05:30 [INF] Route matched with {action = "GetBook", controller = "Books"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetBook(Int32) on controller LibraryAPIManagement.Controllers.BooksController (LibraryAPIManagement).
+2026-04-02 16:10:00.588 +05:30 [INF] Fetching book with ID 4
+2026-04-02 16:10:00.753 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookId], [b].[Title], [b].[Price], [a].[Name] AS [AuthorName]
+FROM [Books] AS [b]
+INNER JOIN [Authors] AS [a] ON [b].[AuthorId] = [a].[AuthorId]
+WHERE [b].[BookId] = @__id_0
+2026-04-02 16:10:00.766 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`4[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Nullable`1[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-04-02 16:10:00.780 +05:30 [INF] Executed action LibraryAPIManagement.Controllers.BooksController.GetBook (LibraryAPIManagement) in 200.9673ms
+2026-04-02 16:10:00.786 +05:30 [INF] Executed endpoint 'LibraryAPIManagement.Controllers.BooksController.GetBook (LibraryAPIManagement)'
+2026-04-02 16:10:00.791 +05:30 [INF] HTTP GET /api/Books/4 responded 200 in 239.3785 ms
+2026-04-02 16:10:00.800 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/api/Books/4 - 200 null application/json; charset=utf-8 285.3605ms
+2026-04-02 16:10:14.643 +05:30 [INF] Request starting HTTP/2 DELETE https://localhost:7025/api/Books/4 - null null
+2026-04-02 16:10:14.666 +05:30 [INF] Executing endpoint 'LibraryAPIManagement.Controllers.BooksController.DeleteBook (LibraryAPIManagement)'
+2026-04-02 16:10:14.679 +05:30 [INF] Route matched with {action = "DeleteBook", controller = "Books"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteBook(Int32) on controller LibraryAPIManagement.Controllers.BooksController (LibraryAPIManagement).
+2026-04-02 16:10:14.693 +05:30 [INF] Deleting book with ID 4
+2026-04-02 16:10:14.831 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookId], [b].[AuthorId], [b].[Price], [b].[Title]
+FROM [Books] AS [b]
+WHERE [b].[BookId] = @__p_0
+2026-04-02 16:10:14.873 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [Books]
+OUTPUT 1
+WHERE [BookId] = @p0;
+2026-04-02 16:10:14.900 +05:30 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2026-04-02 16:10:14.905 +05:30 [INF] Executed action LibraryAPIManagement.Controllers.BooksController.DeleteBook (LibraryAPIManagement) in 217.8415ms
+2026-04-02 16:10:14.911 +05:30 [INF] Executed endpoint 'LibraryAPIManagement.Controllers.BooksController.DeleteBook (LibraryAPIManagement)'
+2026-04-02 16:10:14.919 +05:30 [INF] HTTP DELETE /api/Books/4 responded 204 in 253.4568 ms
+2026-04-02 16:10:14.928 +05:30 [INF] Request finished HTTP/2 DELETE https://localhost:7025/api/Books/4 - 204 null null 286.1745ms
+2026-04-02 16:10:28.693 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/api/Books/4 - null null
+2026-04-02 16:10:28.720 +05:30 [INF] Executing endpoint 'LibraryAPIManagement.Controllers.BooksController.GetBook (LibraryAPIManagement)'
+2026-04-02 16:10:28.726 +05:30 [INF] Route matched with {action = "GetBook", controller = "Books"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetBook(Int32) on controller LibraryAPIManagement.Controllers.BooksController (LibraryAPIManagement).
+2026-04-02 16:10:28.735 +05:30 [INF] Fetching book with ID 4
+2026-04-02 16:10:28.764 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookId], [b].[Title], [b].[Price], [a].[Name] AS [AuthorName]
+FROM [Books] AS [b]
+INNER JOIN [Authors] AS [a] ON [b].[AuthorId] = [a].[AuthorId]
+WHERE [b].[BookId] = @__id_0
+2026-04-02 16:10:28.769 +05:30 [WRN] Book with ID 4 not found
+2026-04-02 16:10:28.772 +05:30 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2026-04-02 16:10:28.776 +05:30 [INF] Executed action LibraryAPIManagement.Controllers.BooksController.GetBook (LibraryAPIManagement) in 41.3337ms
+2026-04-02 16:10:28.780 +05:30 [INF] Executed endpoint 'LibraryAPIManagement.Controllers.BooksController.GetBook (LibraryAPIManagement)'
+2026-04-02 16:10:28.783 +05:30 [INF] HTTP GET /api/Books/4 responded 404 in 63.0226 ms
+2026-04-02 16:10:28.790 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/api/Books/4 - 404 null text/plain; charset=utf-8 98.5259ms
+2026-04-02 16:10:41.086 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7025/api/Books - null null
+2026-04-02 16:10:41.092 +05:30 [INF] Executing endpoint 'LibraryAPIManagement.Controllers.BooksController.GetBooks (LibraryAPIManagement)'
+2026-04-02 16:10:41.103 +05:30 [INF] Route matched with {action = "GetBooks", controller = "Books"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetBooks() on controller LibraryAPIManagement.Controllers.BooksController (LibraryAPIManagement).
+2026-04-02 16:10:41.112 +05:30 [INF] GET api/books endpoint hit
+2026-04-02 16:10:41.135 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookId], [b].[Title], [b].[Price], [a].[Name] AS [AuthorName]
+FROM [Books] AS [b]
+INNER JOIN [Authors] AS [a] ON [b].[AuthorId] = [a].[AuthorId]
+2026-04-02 16:10:41.152 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType0`4[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Nullable`1[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LibraryAPIManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-04-02 16:10:41.159 +05:30 [INF] Executed action LibraryAPIManagement.Controllers.BooksController.GetBooks (LibraryAPIManagement) in 48.815ms
+2026-04-02 16:10:41.163 +05:30 [INF] Executed endpoint 'LibraryAPIManagement.Controllers.BooksController.GetBooks (LibraryAPIManagement)'
+2026-04-02 16:10:41.165 +05:30 [INF] HTTP GET /api/Books responded 200 in 72.6768 ms
+2026-04-02 16:10:41.171 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7025/api/Books - 200 null application/json; charset=utf-8 86.2813ms
