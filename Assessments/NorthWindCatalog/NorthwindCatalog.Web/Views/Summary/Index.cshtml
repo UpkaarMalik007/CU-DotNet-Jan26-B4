@@ -1,0 +1,51 @@
+﻿@using NorthwindCatalog.Services.DTOs
+@model List<CategorySummaryDto>
+
+<h2 class="text-center fw-bold mb-4">📊 Category Summary</h2>
+
+<div class="container">
+    <div class="table-responsive shadow rounded">
+
+        <table class="table table-hover align-middle text-center summary-table">
+
+            <thead class="table-dark">
+                <tr>
+                    <th>Category</th>
+                    <th>Products</th>
+                    <th>Avg Price</th>
+                    <th>Top Product</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <!-- Category -->
+                        <td class="fw-semibold">@item.CategoryName</td>
+
+                        <!-- Product Count Badge -->
+                        <td>
+                            <span class="badge bg-info text-dark px-3 py-2">
+                                @item.ProductCount
+                            </span>
+                        </td>
+
+                        <!-- Avg Price -->
+                        <td class="text-primary fw-bold">
+                            ₹@item.AvgPrice.ToString("F2")
+                        </td>
+
+                        <!-- Most Expensive -->
+                        <td>
+                            <span class="badge bg-danger px-3 py-2">
+                                @item.MostExpensiveProduct
+                            </span>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>
+</div>

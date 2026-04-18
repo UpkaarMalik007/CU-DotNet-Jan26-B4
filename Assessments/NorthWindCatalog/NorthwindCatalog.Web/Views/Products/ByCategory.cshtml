@@ -1,0 +1,47 @@
+﻿@using NorthwindCatalog.Services.DTOs
+@model List<ProductDto>
+
+<h2 class="text-center fw-bold mb-4">🛍️ Products</h2>
+
+<div class="container">
+    <div class="row g-4">
+
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-3 col-md-4 col-sm-6">
+
+                <div class="card product-card h-100 shadow-sm">
+
+                    <div class="card-body text-center d-flex flex-column">
+
+                        <!-- Product Name -->
+                        <h5 class="card-title fw-semibold mb-2">
+                            @item.ProductName
+                        </h5>
+
+                        <!-- Price -->
+                        <p class="price-text mb-1">
+                            ₹@item.UnitPrice.ToString("F2")
+                        </p>
+
+                        <!-- Stock Badge -->
+                        <p>
+                            <span class="badge bg-warning text-dark px-3 py-2">
+                                Stock: @item.UnitsInStock
+                            </span>
+                        </p>
+
+                        <!-- Inventory Value -->
+                        <p class="inventory-text mt-auto">
+                            ₹@item.InventoryValue.ToString("F2")
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        }
+
+    </div>
+</div>

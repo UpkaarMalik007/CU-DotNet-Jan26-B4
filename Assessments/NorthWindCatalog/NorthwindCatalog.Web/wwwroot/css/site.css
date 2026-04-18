@@ -1,0 +1,57 @@
+﻿html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+/* 🔥 CATEGORY CARD FIX */
+.category-card {
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+    .category-card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    }
+
+/* 🔥 FIX IMAGE SIZE (MAIN ISSUE) */
+.category-img {
+    height: 180px;
+    object-fit: cover;
+}
+
+/* 🔥 BUTTON STYLE */
+.btn-primary {
+    border-radius: 25px;
+    font-size: 14px;
+    padding: 8px 16px;
+}
+
+/* 🔥 PAGE BACKGROUND */
+body {
+    background: #f4f6f9;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #007bff, #00c6ff);
+    border: none;
+}

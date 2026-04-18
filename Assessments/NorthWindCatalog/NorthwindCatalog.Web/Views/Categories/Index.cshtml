@@ -1,0 +1,38 @@
+﻿@using NorthwindCatalog.Services.DTOs
+@model List<CategoryDto>
+
+<h2 class="text-center fw-bold mb-4">Categories</h2>
+
+<div class="container">
+    <div class="row g-4">
+
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-3 col-md-4 col-sm-6">
+
+                <div class="card category-card h-100 shadow-sm">
+
+                    <img src="~/images/@(item.CategoryId).jpg"
+                         class="card-img-top category-img"
+                         onerror="this.src='/images/default.jpg'" />
+
+                    <div class="card-body text-center d-flex flex-column">
+
+                        <h5 class="card-title fw-semibold">@item.CategoryName</h5>
+
+                        <a asp-controller="Products"
+                           asp-action="ByCategory"
+                           asp-route-id="@item.CategoryId"
+                           class="btn btn-primary mt-auto">
+                            View Products
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+        }
+
+    </div>
+</div>
